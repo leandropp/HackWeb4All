@@ -10,81 +10,57 @@ var app = function () {
 	var latency = "00:00:00";
 	
 
+// 	var dragged;
 
+// /* events fired on the draggable target */
+// document.addEventListener("drag", function(event) {
 
+// }, false);
 
+// document.addEventListener("dragstart", function(event) {
+//   // store a ref. on the dragged elem
+//   dragged = event.target;
+//   // make it half transparent
+//   event.target.style.opacity = 0.3;
+// }, false);
 
-	var dragged;
+// document.addEventListener("dragend", function(event) {
+//   // reset the transparency
+// 	event.target.style.opacity = "";
+// }, false);
 
-/* events fired on the draggable target */
-document.addEventListener("drag", function(event) {
+// /* events fired on the drop targets */
+// document.addEventListener("dragover", function(event) {
+//   // prevent default to allow drop
+//   event.preventDefault();
+// }, false);
 
-}, false);
+// document.addEventListener("dragenter", function(event) {
+//   // highlight potential drop target when the draggable element enters it
+//   if (event.target.className == "div-resposta") {
+//     event.target.style.background = "purple";
+//   }
 
-document.addEventListener("dragstart", function(event) {
-  // store a ref. on the dragged elem
-  dragged = event.target;
-  // make it half transparent
-  event.target.style.opacity = 0.3;
-}, false);
+// }, false);
 
-document.addEventListener("dragend", function(event) {
-  // reset the transparency
-	event.target.style.opacity = "";
-}, false);
+// document.addEventListener("dragleave", function(event) {
+//   // reset background of potential drop target when the draggable element leaves it
+//   if (event.target.className == "div-resposta") {
+//     event.target.style.background = "";
+//   }
 
-/* events fired on the drop targets */
-document.addEventListener("dragover", function(event) {
-  // prevent default to allow drop
-  event.preventDefault();
-}, false);
+// }, false);
 
-document.addEventListener("dragenter", function(event) {
-  // highlight potential drop target when the draggable element enters it
-  if (event.target.className == "div-resposta") {
-    event.target.style.background = "purple";
-  }
-
-}, false);
-
-document.addEventListener("dragleave", function(event) {
-  // reset background of potential drop target when the draggable element leaves it
-  if (event.target.className == "div-resposta") {
-    event.target.style.background = "";
-  }
-
-}, false);
-
-document.addEventListener("drop", function(event) {
-  // prevent default action (open as link for some elements)
-  event.preventDefault();
-  // move dragged elem to the selected drop target
-  if (event.target.className == "div-resposta") {
-    event.target.style.background = "";
-    dragged.parentNode.removeChild( dragged );
-    event.target.appendChild( dragged );
-  }
-}, false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// document.addEventListener("drop", function(event) {
+//   // prevent default action (open as link for some elements)
+//   event.preventDefault();
+//   // move dragged elem to the selected drop target
+//   if (event.target.className == "div-resposta") {
+//     event.target.style.background = "";
+//     dragged.parentNode.removeChild( dragged );
+//     event.target.appendChild( dragged );
+//   }
+// }, false);
 
 
 
@@ -115,66 +91,66 @@ document.addEventListener("drop", function(event) {
   // as ações do aluno
   var limite_tentativas = 2;
 
-  const alternativas = document.querySelectorAll(".alternativa");
-  const containers = document.querySelectorAll(".container-main");
+//   const alternativas = document.querySelectorAll(".alternativa");
+//   const containers = document.querySelectorAll(".container-main");
 
-	alternativas.forEach((alternativa) => {
-		alternativa.addEventListener('dragstart', dragstart)
-		alternativa.addEventListener('drag', drag)
-		alternativa.addEventListener('dragend', dragend)
-	});
+// 	alternativas.forEach((alternativa) => {
+// 		alternativa.addEventListener('dragstart', dragstart)
+// 		alternativa.addEventListener('drag', drag)
+// 		alternativa.addEventListener('dragend', dragend)
+// 	});
 
-	console.log('alternativas', alternativas);
+// 	console.log('alternativas', alternativas);
 	
-	function dragstart() {
-		console.log("CARD: Start dragging ");
-		resposta.forEach((resp) => resp.classList.add("highlight"));
+// 	function dragstart() {
+// 		console.log("CARD: Start dragging ");
+// 		resposta.forEach((resp) => resp.classList.add("highlight"));
 
-		// this = card
-		this.classList.add("is-dragging");
-	}
+// 		// this = card
+// 		this.classList.add("is-dragging");
+// 	}
 
-	function drag() {
-		console.log("CARD: Is dragging ");
-	}
+// 	function drag() {
+// 		console.log("CARD: Is dragging ");
+// 	}
 
-	function dragend() {
-		console.log("CARD: Stop drag! ");
-		respota.forEach((resp) => resp.classList.remove("highlight"));
+// 	function dragend() {
+// 		console.log("CARD: Stop drag! ");
+// 		respota.forEach((resp) => resp.classList.remove("highlight"));
 
-		// this = card
-		this.classList.remove("is-dragging");
-	}
+// 		// this = card
+// 		this.classList.remove("is-dragging");
+// 	}
 	
 
-	containers.forEach( container => {
-		container.addEventListener('dragover', dragover)
-		container.addEventListener('dragleave', dragleave)
-		container.addEventListener('drop', drop)
-})
+// 	containers.forEach( container => {
+// 		container.addEventListener('dragover', dragover)
+// 		container.addEventListener('dragleave', dragleave)
+// 		container.addEventListener('drop', drop)
+// })
 
-function dragover() {
-		// this = div-resolucao
-		// this.classList.add('over')
+// function dragover() {
+// 		// this = div-resolucao
+// 		// this.classList.add('over')
 
-		// get dragging card
-		const cardBeingDragged = document.querySelector('.is-dragging')
+// 		// get dragging card
+// 		const cardBeingDragged = document.querySelector('.is-dragging')
 
-		// this = div-resolucao
-		this.appendChild(cardBeingDragged)
-}
+// 		// this = div-resolucao
+// 		this.appendChild(cardBeingDragged)
+// }
 
-function dragleave() {
-		// log('div-resolucao: Leave ')
-		// this = div-resolucao
-		this.classList.remove('over')
+// function dragleave() {
+// 		// log('div-resolucao: Leave ')
+// 		// this = div-resolucao
+// 		this.classList.remove('over')
 
-}
+// }
 
-function drop() {
-		// log('div-resolucao: dropped ')
-		this.classList.remove('over')
-}
+// function drop() {
+// 		// log('div-resolucao: dropped ')
+// 		this.classList.remove('over')
+// }
 
 
 
@@ -212,7 +188,70 @@ function drop() {
     on: function () {
       console.log("entrou no on");
 
+      const alternativas = document.querySelectorAll('.alternativa');
+      const locaisRespostas = document.querySelectorAll('.resposta');
 
+      alternativas.forEach(alternativa => {
+        alternativa.addEventListener('dragstart', iniciarArraste);
+        alternativa.addEventListener('drag', arrastando);
+        alternativa.addEventListener('dragend', finalizarArraste);
+      });
+
+      locaisRespostas.forEach( local => {
+        local.addEventListener('dragenter', entrouLocalResposta);
+        local.addEventListener('dragover', sobreLocalResposta);
+        local.addEventListener('dragleave', saiuLocalResposta);
+        local.addEventListener('drop', soltouNoLocalResposta);
+      });
+
+      function iniciarArraste () {
+        console.log('iniciou o arraste');
+
+        this.classList.add('em-arraste');
+      }
+
+      function arrastando () {
+        console.log('arrastando');
+      }
+
+      function finalizarArraste () {
+        console.log('finalizou arraste');
+
+        const virouResposta = document
+          .querySelectorAll('.resposta')
+          .forEach( resp => {
+            const resp = resp.querySelectorAll('.alternativa');
+            if (resp) return;
+          });
+        if (virouResposta) {
+          this.chil
+        }
+        this.classList.remove('em-arraste');
+      }
+
+      function entrouLocalResposta () {
+        console.log('entrou LocalResposta');
+      }
+
+      function sobreLocalResposta () {
+        console.log('sobre LocalResposta');
+
+        this.classList.add('over');
+
+      }
+
+      function saiuLocalResposta () {
+        console.log('saiu LocalResposta');
+
+        this.classList.remove('over');
+
+      }
+
+      function soltouNoLocalResposta () {
+        console.log('soltou NoLocalResposta');
+
+      }
+                  
     },
 
     // Eventos registrados pela função "on",
@@ -237,6 +276,8 @@ function drop() {
     // logo após a exibição
     exibir: function () {
       console.log("entrou no exibir");
+
+
 
 
     },
@@ -272,8 +313,8 @@ function drop() {
     // inicialização de todas as funcionalidades
     init: function () {
       this.capturarRespostas();
-      this.on();
       this.exibir();
+      this.on();
     },
 
     // remover todos os listeners

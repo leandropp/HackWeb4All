@@ -49,7 +49,7 @@ body {
   align-items: center;
 }
 
-.div-alternativa {
+.alternativa {
   /* border: 1px solid #b7b3ae; */
   background-color: black;
   border-radius: 8px;
@@ -58,7 +58,6 @@ body {
   color: yellow;
   cursor: pointer;
 
-  transition: 400ms;
 }
 
 .div-resolucao{
@@ -72,7 +71,7 @@ body {
   align-items: center;
 }
 
-.div-resposta {
+.resposta {
   width: 200px;
   height: 64px;
   border: 5px solid yellow;
@@ -80,40 +79,17 @@ body {
   box-shadow: 4px 4px 8px #727272;
   margin: 16px;
   padding: 8px;
-
-  transition: 400ms;
 }
 
-.is-dragging {
+.em-arraste {
   cursor: move;
   opacity: 0.3;
-
-  border: 10px solid yellow;
 }
 
-.status {
-  width: 30px;
-  height: 8px;
-  background: gray;
-  margin-bottom: 16px;
-  border-radius: 8px;
+.alternativa .resposta {
+  transition: 600ms;
 }
 
-.status.green {
-  background: #23d2ac;
-}
-
-.status.blue {
-  background: #33adff;
-}
-
-.status.red {
-  background: red;
-}
-
-.highlight {
-  background-color: #FD951F08;
-}
 
 .is-dragging {
   cursor: move;
@@ -123,5 +99,5 @@ body {
 }
 
 .over {
-  background-color: #4cd13711;
+  border: 10px solid green;
 }
